@@ -29,6 +29,7 @@ body {
 .side-content {
     width: 35%;
     background-color: #FFFFFF;
+    border-right: 1px solid #D9DBD4;
 }
 
 .top-bar {
@@ -37,6 +38,7 @@ body {
     justify-content: space-between;
     height: 8%;
     background-color: #EAEAEA;
+    flex-shrink: 0;
 }
 
 .user-info {
@@ -52,6 +54,11 @@ body {
     margin-right: 5px;
 }
 
+.user-info span {
+    font-size: 0.8rem;
+    color: #8f8f8f;
+}
+
 .side-top-icons {
     display: flex;
     color: #B1B1B1;
@@ -59,7 +66,11 @@ body {
 
 .side-top-icons i {
     margin: 0 8px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+}
+
+.side-top-icons i:hover {
+    color: #707070;
 }
 
 .nav-notification {
@@ -121,16 +132,24 @@ body {
 }
 
 .search-input input {
-    padding: 10px 0;
+    padding: 10px 10px;
     border: none;
     width: 100%;
+}
+
+.conversations-list {
+    height: 75%;
+    overflow: scroll;
 }
 
 .main-content {
     display: flex;
     flex-direction: column;
     width: 65%;
-    background-color: lightcoral;
+}
+
+.main-content .top-bar .side-top-icons {
+    margin-right: 10px;
 }
 
 .conversation-active {
@@ -139,7 +158,35 @@ body {
 }
 
 .bot-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 10%;
     background-color: #F3EEEA;
     flex-shrink: 0;
+}
+
+.bot-icons {
+    color: rgb(114, 114, 114);
+    font-size: 1.5rem;
+}
+
+.bot-icons i {
+    padding: 20px 10px;
+}
+
+.bot-input input {
+    padding: 20px 5px;
+    width: 800px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.fa-face-smile:hover {
+    color: #ffd700;
+}
+
+.fa-microphone:hover {
+    color: #d80000;
 }
