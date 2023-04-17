@@ -69,6 +69,20 @@
                 </div>
                 <!-- sezione con la lista delle conversazioni -->
                 <div class="conversations-list">
+                    <ul>
+                        <li v-for="contact in contacts">
+                            <div class="user-avatar">
+                                <img :src="contact.avatar" alt="user-avatar">
+                            </div>
+                            <div class="user-conversation">
+                                <p>{{contact.name}}</p>
+                                <div v-for="(lastMessage, index) in contact.messages" class="last-message">
+                                    <span v-if="index === contact.messages.length -1">{{lastMessage.message}}</span>
+                                </div>
+                                
+                            </div>
+                        </li>
+                    </ul>
 
                 </div>
             </div>
