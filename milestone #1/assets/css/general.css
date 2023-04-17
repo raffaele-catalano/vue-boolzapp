@@ -1,0 +1,27 @@
+/*GENERAL*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgb(219,219,210);
+    background: linear-gradient(180deg, #009688 15%, #D9DBD4 15%); 
+    cursor: pointer;
+}
+
+.wrapper {
+    display: flex;
+    width: 80%;
+    height: 90%;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .5);
+}
