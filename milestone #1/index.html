@@ -75,11 +75,16 @@
                                 <img :src="contact.avatar" alt="user-avatar">
                             </div>
                             <div class="user-conversation">
+
                                 <p>{{contact.name}}</p>
-                                <div v-for="(lastMessage, index) in contact.messages" class="last-message">
-                                    <span v-if="index === contact.messages.length -1">{{lastMessage.message}}</span>
+
+                                <div class="last-message">
+
+                                    <span>{{contact.messages[contact.messages.length - 1].message}}</span>
+
+                                    <span class="side-last-message-time">{{contact.messages[contact.messages.length -1].time}}</span>
                                 </div>
-                                
+
                             </div>
                         </li>
                     </ul>
@@ -106,12 +111,15 @@
                     </div>
                 </div>
                 <!-- sezione con la conversazione attiva -->
-                <div class="conversation-active">
+                <div class="conversation-showed">
                     <div class="message-sent">
                         <p>a</p>
+                        <!-- <span class="main-last-message-time">14:40</span> -->
+                        
                     </div>
                     <div class="message-received">
                         <p>Mozzarellaaaaa</p>
+                        <!-- <span class="main-last-message-time">14:45</span> -->
                     </div>
                 </div>
                 <!-- barra inferiore con l'input di inserimento nuovo messaggio -->
