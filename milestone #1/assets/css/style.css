@@ -9,7 +9,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-/*CONTENT*/
+/* SIDE CONTENT*/
 #app {
     display: flex;
     justify-content: center;
@@ -71,6 +71,7 @@ body {
 
 .side-top-icons i:hover {
     color: #707070;
+    transition: all .3s;
 }
 
 .nav-notification {
@@ -88,7 +89,7 @@ body {
 .notification-icon i {
     color: #8EDAFC;
     background-color: white;
-    padding: 15px 13px;
+    padding: 15px 12.5px;
     border-radius: 50%;
     font-size: 1.3rem;
     margin: 0 12px;
@@ -135,12 +136,47 @@ body {
     padding: 10px 10px;
     border: none;
     width: 100%;
+    font-size: .8rem;
 }
 
 .conversations-list {
     height: 75%;
     overflow: scroll;
 }
+
+.conversations-list li {
+    list-style: none;
+    display: flex;
+    padding: 10px 0 5px 10px;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.conversations-list li:hover {
+    background-color: rgb(222, 222, 222);
+    transition: all .3s;
+}
+
+.user-avatar {
+    margin-right: 10px;
+}
+
+.user-avatar img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.user-conversation {
+    align-self: center;
+}
+
+.user-conversation span {
+    font-size: .8rem;
+    color: #8f8f8f;
+}
+
+
+
+/*MAIN CONTENT*/
 
 .main-content {
     display: flex;
@@ -176,17 +212,20 @@ body {
 }
 
 .bot-input input {
-    padding: 20px 5px;
-    width: 800px;
+    padding: 20px 10px;
+    width: 850px;
     border: none;
     border-radius: 5px;
     margin: 0 10px;
+    font-size: 1rem;
 }
 
 .fa-face-smile:hover {
     color: #ffd700;
+    transition: all .3s;
 }
 
 .fa-microphone:hover {
     color: #d80000;
+    transition: all .3s;
 }
