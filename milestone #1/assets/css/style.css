@@ -10,9 +10,55 @@ body {
 }
 
 /*CONTENT*/
-
 #app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     background: rgb(219,219,210);
     background: linear-gradient(0deg, #D9DBD4 85%, #009688 85%); 
+}
+
+.wrapper {
+    display: flex;
+    width: 80%;
+    height: 95%;
+}
+
+.side-content {
+    width: 35%;
+    background-color: #FFFFFF;
+}
+
+.top-bar {
+    height: 8%;
+    background-color: #EAEAEA;
+}
+
+.nav-notification {
+    height: 17%;
+    background-color: #FAFAFA;
+}
+
+.set-notification {
+    height: 70%;
+    background-color: #8EDAFC;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    background-color: lightcoral;
+}
+
+.conversation-active {
+    height: 82%;
+    background-image: url('../img/mine.jpg');
+}
+
+.bot-bar {
+    height: 10%;
+    background-color: #F3EEEA;
+    flex-shrink: 0;
 }
