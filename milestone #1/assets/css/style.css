@@ -142,7 +142,7 @@ body {
 
 .conversations-list {
     height: 75%;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .conversations-list li {
@@ -150,6 +150,7 @@ body {
     display: flex;
     padding: 10px 0 5px 10px;
     border-bottom: 1px solid rgb(240, 240, 240);
+    position: relative;
 }
 
 .conversations-list li:hover {
@@ -172,12 +173,22 @@ body {
 
 .user-conversation span {
     display: block;
-    max-width: 400px;
+    max-width: 350px;
     font-size: .8rem;
     color: #8f8f8f;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+
+.user-conversation p {
+    margin-bottom: 5px;
+}
+
+.side-last-message-time {
+    position: absolute;
+    top: 25px;
+    right: 10px;
 }
 
 /*-----------------------------*/
@@ -193,18 +204,19 @@ body {
     margin-right: 10px;
 }
 
-.conversation-active {
+.conversation-showed {
     display: flex;
     flex-direction: column;
     height: 82%;
     background-image: url('../img/mine.jpg');
     padding: 15px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .message-sent {
     display: flex;
     justify-content: flex-end;
+    position: relative;
 }
 
 .message-sent p {
@@ -219,6 +231,7 @@ body {
 .message-received {
     display: flex;
     justify-content: flex-start;
+    position: relative;
 }
 
 .message-received p {
@@ -229,6 +242,11 @@ body {
     max-width: 60%;
     word-wrap: break-word;
 }
+
+/* .main-last-message-time {
+    font-size: .8rem;
+    color: #707070;
+} */
 
 .bot-bar {
     display: flex;
