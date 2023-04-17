@@ -28,29 +28,62 @@
     <div id="app">
 
         <div class="wrapper">
+
             <!-- sezione laterale con elenco conversazioni -->
             <div class="side-content">
+                <!-- barra superiore -->
                 <div class="top-bar">
-
-                </div>
-                <div class="nav-notification">
-                    <div class="set-notification">
-
+                    <!-- contiene l'immagine avatar dell'utente ed il nome -->
+                    <div class="user-info">
+                        <img src="assets/img/avatar_io.jpg" alt="avatar-user">
+                        <span>Raffaele</span>
                     </div>
-                    <div class="search-bar"></div>
+                    <!-- contiene le icone -->
+                    <div class="side-top-icons">
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
                 </div>
+                <!-- sezione con le notifiche e la barra ricerca conversazioni -->
+                <div class="nav-notification">
+                    <!-- notifiche -->
+                    <div class="set-notification">
+                        <div class="notification-icon">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </div>
+                        <div class="notification-text">
+                            <p>Ricevi notifiche di nuovi messaggi</p>
+                            <span>Attiva notifiche desktop</span>
+                        </div>
+                    </div>
+                    <!-- barra di ricerca -->
+                    <div class="search-bar">
+                        <div class="search-icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <div class="search-input">
+                            <input type="text" placeholder="Cerca o Inizia una nuova conversazione">
+                        </div>
+                    </div>
+                </div>
+                <!-- sezione con la lista delle conversazioni -->
                 <div class="conversations-list">
 
                 </div>
             </div>
+
             <!-- sezione centrale con la conversazione -->
             <div class="main-content">
+                <!-- barra superiore -->
                 <div class="top-bar">
 
                 </div>
+                <!-- sezione con la conversazione attiva -->
                 <div class="conversation-active">
 
                 </div>
+                <!-- barra inferiore con l'input di inserimento nuovo messaggio -->
                 <div class="bot-bar">
 
                 </div>
