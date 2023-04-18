@@ -156,8 +156,14 @@
     margin-bottom: 5px;
 }
 
-.side-last-message-time {
+.side-last-message {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 25px;
     right: 10px;
+}
+
+.side-last-message-time {
+    align-self: flex-end;
 }

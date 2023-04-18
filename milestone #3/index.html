@@ -86,8 +86,14 @@
                                 <div class="last-message">
 
                                     <span>{{contact.messages[contact.messages.length - 1].message}}</span>
+                                    <div class="side-last-message">
 
-                                    <span class="side-last-message-time">{{contact.messages[contact.messages.length -1].time}}</span>
+                                        <span class="side-last-message-date">{{contact.messages[contact.messages.length -1].date}}</span>
+
+                                        <span class="side-last-message-time">{{contact.messages[contact.messages.length -1].time}}</span>
+                                        
+                                    </div>
+                                    
                                 </div>
 
                             </div>
@@ -105,7 +111,7 @@
                         <img :src="contacts[counter].avatar" alt="avatar">
                         <div class="user-info-text">
                             <p>{{contacts[counter].name}}</p>
-                            <span>Ultimo accesso oggi alle 12:00</span>
+                            <span>Ultimo accesso il {{contacts[counter].messages[contacts[counter].messages.length -1].date}} alle {{contacts[counter].messages[contacts[counter].messages.length -1].time}} </span>
                         </div>
                     </div>
 
@@ -119,7 +125,7 @@
                 <div class="conversation-showed">
                     <div v-for="(singleMessage, index) in contacts[counter].messages" class="message" :class="singleMessage.status">
                         <p>{{singleMessage.message}}</p>
-                        <span>12:00</span>
+                        <span>{{singleMessage.time}} <i class="fa-solid fa-check-double"></i></span>
                     </div>
                 </div>
                 <!-- barra inferiore con l'input di inserimento nuovo messaggio -->

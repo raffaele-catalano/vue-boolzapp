@@ -22,6 +22,7 @@ createApp ({
 
         sendNewMessage(){
             const message = {
+                date: dt.now().setLocale('it').toFormat('dd/MM/yyyy'),
                 time: dt.now().setLocale('it').toLocaleString(dt.TIME_SIMPLE),
                 message: this.newMessage,
                 status: 'sent'
