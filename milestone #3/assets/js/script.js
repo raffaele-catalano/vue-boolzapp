@@ -28,11 +28,24 @@ createApp ({
                 status: 'sent'
             }
             this.contacts[this.counter].messages.push(message);
+            this.autoReply()
             this.newMessage = ''
+        },
+
+        autoReply() {
+            setTimeout(() => {
+                const message = {
+                    date: dt.now().setLocale('it').toFormat('dd/MM/yyyy'),
+                    time: dt.now().setLocale('it').toLocaleString(dt.TIME_SIMPLE),
+                    message: 'Ok',
+                    status: 'received'
+                }
+                this.contacts[this.counter].messages.push(message);
+            }, 1000);
         }
     },
 
     mounted () {
-        console.log(this.sendNewMessage);
+        console.log(this.autoReply);
     }
 }).mount('#app');
