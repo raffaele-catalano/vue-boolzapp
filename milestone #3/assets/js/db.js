@@ -189,7 +189,7 @@ export default [
                 date: '10/01/2020',
                 time: '15:03',
                 message: 'Ti pareva che non scegli il posto più caro...Va bene dai, ti accontento!',
-                status: 'received'
+                status: 'sent'
             }
         ],
     }

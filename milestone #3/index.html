@@ -128,7 +128,7 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div class="bot-input">
-                        <input type="text" placeholder="Scrivi un Messaggio">
+                        <input v-model="newMessage" @keyup.enter="sendNewMessage" type="text" placeholder="Scrivi un Messaggio">
                     </div>
                     <div class="bot-icons">
                         <i class="fa-solid fa-microphone"></i>
