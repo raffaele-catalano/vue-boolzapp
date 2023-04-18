@@ -15,44 +15,35 @@
     flex-direction: column;
     height: calc(100% - 165px);
     background-image: url('../img/mine.jpg');
-    padding: 15px;
+    padding: 20px;
     overflow-y: scroll;
 }
 
-.message-sent {
+.message {
     display: flex;
-    justify-content: flex-end;
-    position: relative;
-}
-
-.message-sent p {
-    background-color: #D5F9BA;
-    padding: 15px;
-    border-radius: 10px;
-    min-width: 9%;
-    max-width: 60%;
-    word-wrap: break-word;
-}
-
-.message-received {
-    display: flex;
-    justify-content: flex-start;
-    position: relative;
-}
-
-.message-received p {
+    align-self: flex-start;
     background-color: #FFFFFF;
-    padding: 15px;
+    padding: 20px 20px 20px 10px;
     border-radius: 10px;
-    min-width: 9%;
-    max-width: 60%;
+    min-width: 10%;
+    max-width: 50%;
     word-wrap: break-word;
+    margin-bottom: 10px;
+    position: relative;
 }
 
-/* .main-last-message-time {
-    font-size: .8rem;
-    color: #707070;
-} */
+.message.sent {
+    align-self: flex-end;
+    background-color: #D5F9BA;
+}
+
+.message span {
+    position: absolute;
+    font-size: .7rem;
+    bottom: 1px;
+    right: 6px;
+    color: #8f8f8f;
+}
 
 .bot-bar {
     display: flex;
@@ -60,28 +51,33 @@
     justify-content: center;
     height: 90px;
     background-color: #F3EEEA;
+    padding: 0 20px;
 }
 
 .bot-icons {
     color: rgb(114, 114, 114);
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 .bot-icons i {
-    padding: 20px 10px;
+    padding: 20px 25px;
+}
+
+.bot-input {
+    flex-grow: 1;
 }
 
 .bot-input input {
     padding: 20px 10px;
-    width: 850px;
     border: none;
+    width: 100%;
     border-radius: 5px;
-    margin: 0 10px;
+    /* margin: 0 10px; */
     font-size: 1rem;
 }
 
 .fa-face-smile:hover {
-    color: #ffd700;
+    color: rgb(250, 200, 75);
     transition: all .3s;
 }
 
