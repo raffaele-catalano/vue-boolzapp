@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/boolzap_favicon.png" type="png">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- Luxon -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/luxon/3.3.0/luxon.js' integrity='sha512-t6ukNvGgU+fAPftTDmHRg7AlbbIqNbercmkwMJAW2Vv8LSFoKaUjbVk5SXiWederZTEE2XMyaZefve2mJGHQwA==' crossorigin='anonymous'></script>
+    <!-- Font-Awesome -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css' integrity='sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw==' crossorigin='anonymous'/>
+    <!-- Vue -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.js' integrity='sha512-2zwx0mkoR2cxZY0humPK79YhJYgoX5lT+WNqkgTcV7qhVm3+msjlmOgoXnN1cW2r9qqbZez3XhnLZsyW3k8Wtg==' crossorigin='anonymous'></script>
+    <!-- Css -->
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/side-content.css">
+    <link rel="stylesheet" href="assets/css/main-content.css">
+    <!--  -->
+    <title>Boolzapp</title>
+
+</head>
+
+
+<body>
+    
+
+    <div id="app">
+
+        <div class="wrapper">
+            <!-- LEFT SIDE -->
+            <!-- sezione laterale con elenco conversazioni -->
+            <div class="side-content">
+                <!-- barra superiore -->
+                <div class="top-bar">
+                    <!-- contiene l'immagine avatar dell'utente ed il nome -->
+                    <div class="user-info">
+                        <img src="assets/img/avatar_io.jpg" alt="avatar-user">
+                        <p>Raffaele</p>
+                    </div>
+                    <!-- contiene le icone -->
+                    <div class="side-top-icons">
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+                <!-- sezione con le notifiche e la barra ricerca conversazioni -->
+                <div class="nav-notification">
+                    <!-- notifiche -->
+                    <div class="set-notification">
+                        <div class="notification-icon">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </div>
+                        <div class="notification-text">
+                            <p>Ricevi notifiche di nuovi messaggi</p>
+                            <span>Attiva notifiche desktop</span>
+                        </div>
+                    </div>
+                    <!-- barra di ricerca -->
+                    <div class="search-bar">
+                        <div class="search-icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <div class="search-input">
+                            <input type="text" placeholder="Cerca o Inizia una nuova conversazione">
+                        </div>
+                    </div>
+                </div>
+                <!-- sezione con la lista delle conversazioni -->
+                <div class="conversations-list">
+                    <ul>
+                        <li v-for="(contact, index) in contacts" @click="chatSwap(index)">
+                            <div class="user-avatar">
+                                <img :src="contact.avatar" alt="user-avatar">
+                            </div>
+                            <div class="user-conversation">
+
+                                <p>{{contact.name}}</p>
+
+                                <div class="last-message">
+
+                                    <span>{{contact.messages[contact.messages.length - 1].message}}</span>
+
+                                    <span class="side-last-message-time">{{contact.messages[contact.messages.length -1].time}}</span>
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <!-- RIGHT SIDE -->
+            <!-- sezione centrale con la conversazione -->
+            <div class="main-content">
+                <!-- barra superiore -->
+                <div class="top-bar">
+                    <div class="user-info">
+                        <img :src="contacts[counter].avatar" alt="avatar">
+                        <div class="user-info-text">
+                            <p>{{contacts[counter].name}}</p>
+                            <span>Ultimo accesso oggi alle 12:00</span>
+                        </div>
+                    </div>
+
+                    <div class="side-top-icons">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+                <!-- sezione con la conversazione attiva -->
+                <div class="conversation-showed">
+                    <div v-for="(singleMessage, index) in contacts[counter].messages" class="message" :class="singleMessage.status">
+                        <p>{{singleMessage.message}}</p>
+                        <span>12:00</span>
+                    </div>
+                </div>
+                <!-- barra inferiore con l'input di inserimento nuovo messaggio -->
+                <div class="bot-bar">
+                    <div class="bot-icons">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </div>
+                    <div class="bot-input">
+                        <input type="text" placeholder="Scrivi un Messaggio">
+                    </div>
+                    <div class="bot-icons">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="assets/js/script.js"></script>
+</body>
+
+</html>
