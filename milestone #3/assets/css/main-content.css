@@ -1,0 +1,87 @@
+/*-----------------------------*/
+/*--------MAIN CONTENT--------*/
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 500px);
+}
+
+.main-content .top-bar .side-top-icons {
+    margin-right: 10px;
+}
+
+.conversation-showed {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 165px);
+    background-image: url('../img/mine.jpg');
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+.message {
+    display: flex;
+    align-self: flex-start;
+    background-color: #FFFFFF;
+    padding: 20px 20px 20px 10px;
+    border-radius: 10px;
+    min-width: 10%;
+    max-width: 50%;
+    word-wrap: break-word;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.message.sent {
+    align-self: flex-end;
+    background-color: #D5F9BA;
+}
+
+.message span {
+    position: absolute;
+    font-size: .7rem;
+    bottom: 1px;
+    right: 6px;
+    color: #8f8f8f;
+}
+
+.bot-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    background-color: #F3EEEA;
+    padding: 0 20px;
+}
+
+.bot-icons {
+    color: rgb(114, 114, 114);
+    font-size: 1.6rem;
+}
+
+.bot-icons i {
+    padding: 20px 25px;
+}
+
+.bot-input {
+    flex-grow: 1;
+}
+
+.bot-input input {
+    padding: 20px 10px;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    /* margin: 0 10px; */
+    font-size: 1rem;
+}
+
+.fa-face-smile:hover {
+    color: rgb(250, 200, 75);
+    transition: all .3s;
+}
+
+.fa-microphone:hover {
+    color: #d80000;
+    transition: all .3s;
+}
