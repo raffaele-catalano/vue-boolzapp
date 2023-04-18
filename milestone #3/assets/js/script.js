@@ -59,11 +59,10 @@ createApp ({
             // riproduce suono di ricezione messaggio
                 soundMsgReceived.play();
                 // la risposta automatica avviene dopo 3 secondi
-            }, 3000);
-        }
+            }, 1500);
+        },
     },
 
     mounted () {
-        console.log(this.autoReply);
     }
 }).mount('#app');

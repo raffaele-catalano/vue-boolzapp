@@ -3,7 +3,7 @@
 .main-content {
     display: flex;
     flex-direction: column;
-    width: calc(100% - 500px);
+    width: 65%;
 }
 
 .main-content .top-bar .side-top-icons {
@@ -24,7 +24,7 @@
     align-self: flex-start;
     background-color: #FFFFFF;
     padding: 20px 20px 20px 10px;
-    min-width: 10%;
+    min-width: 9%;
     max-width: 50%;
     word-wrap: break-word;
     margin-bottom: 10px;
@@ -78,7 +78,7 @@
 }
 
 .fa-face-smile:hover {
-    color: rgb(250, 200, 75);
+    color: rgb(248, 200, 79);
     transition: all .3s;
 }
 
