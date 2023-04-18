@@ -1,5 +1,9 @@
 import contacts from './db.js'
 
+// suoni di invio/ricezione messaggi
+const soundMsgSent = new Audio('assets/sound/message_sent.mp3');
+const soundMsgReceived = new Audio('assets/sound/message_received.mp3');
+
 //inizializzazione di Luxon
 const dt = luxon.DateTime;
 
@@ -19,7 +23,12 @@ createApp ({
             this.counter = index;
                 console.log('ho cliccato la chat con indice -->', this.counter);
         },
-
+        // questa funzione è relativa all'invio di un nuovo messaggio nella casella
+        // di input. si destrutturano alcune keys dell'array originale e riassegnandole
+        // alla variabile 'message'.
+        // per 'date' e 'time' si recuperano i dati dalla libreria LUXON
+        // message viene rimpiazzato dal testo inserito nel campo di input
+        // lo status è assegnato di default come 'sent'
         sendNewMessage(){
             const message = {
                 date: dt.now().setLocale('it').toFormat('dd/MM/yyyy'),
@@ -27,11 +36,17 @@ createApp ({
                 message: this.newMessage,
                 status: 'sent'
             }
+            // message viene pushato nell'array originale
             this.contacts[this.counter].messages.push(message);
-            this.autoReply()
-            this.newMessage = ''
+            // riproduce suono di invio messaggio
+            soundMsgSent.play();
+            // viene richiamata la funzione sottostante affinchè agisca dopo il push
+            this.autoReply();
+            // si resetta newMessage in modo che il campo di input venga svuotato
+            this.newMessage = '';
         },
-
+        // questa funzione è relativa alla risposta automatica dopo l'invio di un messaggio
+        // 
         autoReply() {
             setTimeout(() => {
                 const message = {
@@ -41,7 +56,10 @@ createApp ({
                     status: 'received'
                 }
                 this.contacts[this.counter].messages.push(message);
-            }, 1000);
+            // riproduce suono di ricezione messaggio
+                soundMsgReceived.play();
+                // la risposta automatica avviene dopo 3 secondi
+            }, 3000);
         }
     },
 

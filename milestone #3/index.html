@@ -102,6 +102,10 @@
 
                 </div>
             </div>
+            <!-- FINE LEFT SIDE -->
+
+            <!-- --------------------------------------------------------------------- -->
+
             <!-- RIGHT SIDE -->
             <!-- sezione centrale con la conversazione -->
             <div class="main-content">
@@ -111,16 +115,21 @@
                         <img :src="contacts[counter].avatar" alt="avatar">
                         <div class="user-info-text">
                             <p>{{contacts[counter].name}}</p>
-                            <span>Ultimo accesso il {{contacts[counter].messages[contacts[counter].messages.length -1].date}} alle {{contacts[counter].messages[contacts[counter].messages.length -1].time}} </span>
+                            <span>
+                                Ultimo accesso il {{contacts[counter].messages[contacts[counter].messages.length -1].date}} 
+                                alle {{contacts[counter].messages[contacts[counter].messages.length -1].time}}
+                            </span>
                         </div>
                     </div>
-
+                    <!-- sezione icone nella top bar -->
                     <div class="side-top-icons">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <i class="fa-solid fa-paperclip"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
+
                 </div>
+
                 <!-- sezione con la conversazione attiva -->
                 <div class="conversation-showed">
                     <div v-for="(singleMessage, index) in contacts[counter].messages" class="message" :class="singleMessage.status">
@@ -140,13 +149,18 @@
                         <i class="fa-solid fa-microphone"></i>
                     </div>
                 </div>
+
             </div>
+            <!-- FINE LEFT SIDE -->
+
+            <!-- --------------------------------------------------------------------- -->
 
         </div>
 
     </div>
 
     <script type="module" src="assets/js/script.js"></script>
+    
 </body>
 
 </html>
