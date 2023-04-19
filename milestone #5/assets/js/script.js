@@ -52,10 +52,7 @@ createApp ({
             // si resetta newMessage in modo che il campo di input venga svuotato
             this.newMessage = '';
 
-            setTimeout(() => {
-                const chatShowed = document.querySelector('.conversation-showed');
-                chatShowed.scrollTop = chatShowed.scrollHeight;
-            }, 2);
+            this.autoScrollChat();
         },
         // questa funzione è relativa alla risposta automatica dopo l'invio di un messaggio
         // 
@@ -70,12 +67,17 @@ createApp ({
                 this.contacts[this.counter].messages.push(message);
             // riproduce suono di ricezione messaggio
                 this.notification ? soundMsgReceived.play() : null;
-                setTimeout(() => {
-                    const chatShowed = document.querySelector('.conversation-showed');
-                    chatShowed.scrollTop = chatShowed.scrollHeight;
-                }, 1);
+
+                this.autoScrollChat();
                 // la risposta automatica avviene dopo 1.5 secondi
             }, 1500);
+        },
+
+        autoScrollChat () {
+            setTimeout(() => {
+                const chatShowed = document.querySelector('.conversation-showed');
+                chatShowed.scrollTop = chatShowed.scrollHeight;
+            }, 1);
         },
 
         deleteMessage(i){
@@ -92,8 +94,8 @@ createApp ({
             this.contacts.forEach(contact => {
                 contact.visible = contact.name.toLowerCase().includes(this.userFilter.toLowerCase())
             });
-
-            return this.contacts.visible
+            
+            return this.contacts.visible;
         }
     }
 

@@ -70,7 +70,7 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
                         <div class="search-input">
-                            <input v-model="userFilter" @keyup="chatSearch" type="text" placeholder="Cerca o Inizia una nuova conversazione">
+                            <input v-model="userFilter" @keyup="chatSearch" type="text" placeholder="Cerca un utente e la sua conversazione">
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                     <ul>
                         <li v-for="(contact, index) in contacts" @click="chatSwap(index)" :class="{'active' : index === counter}">
                             
-                            <div class="single-conversation">
+                            <div v-if="contact.visible" class="single-conversation">
 
                                 <div class="user-avatar">
                                     <img :src="contact.avatar" alt="user-avatar">
@@ -101,9 +101,9 @@
                                         
                                     </div>
 
-                                    <div class="last-message" v-else="">
+                                    <div class="last-message" v-else>
     
-                                        <span>Non sono presenti messaggi in questa conversazione</span>
+                                        <span><em>Non sono presenti messaggi in questa conversazione</em></span>
 
                                     </div>
     
@@ -133,8 +133,8 @@
                                 Ultimo accesso il {{contacts[counter].messages[contacts[counter].messages.length -1].date}} 
                                 alle {{contacts[counter].messages[contacts[counter].messages.length -1].time}}
                             </span>
-                            <span v-else="">
-                                Impossibile determinare l'ultimo accesso
+                            <span v-else>
+                                <em>Impossibile determinare l'ultimo accesso</em> 
                             </span>
                         </div>
                     </div>

@@ -78,6 +78,8 @@ createApp ({
                 contact.visible = contact.name.toLowerCase().includes(this.userFilter.toLowerCase())
             });
 
+            console.log('ciao', this.contacts.visible);
+
             return this.contacts.visible
         }
     }
