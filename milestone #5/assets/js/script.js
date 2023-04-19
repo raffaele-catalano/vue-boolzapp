@@ -20,6 +20,8 @@ createApp ({
             notification    : true,
             dropdownChevron : false,
             messageIndex    : 0,
+            isHoverDelete   : false,
+            isHoverInfo     : false,
         }
     },
 

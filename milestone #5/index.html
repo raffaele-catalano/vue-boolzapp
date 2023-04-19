@@ -59,8 +59,9 @@
                             <i class="fa-solid" :class="{'fa-bell' : notification}, {'fa-bell-slash' : !notification}" @click="notification = !notification"></i>
                         </div>
                         <div class="notification-text">
-                            <p>Ricevi notifiche di nuovi messaggi</p>
-                            <span>Attiva notifiche desktop</span>
+                            <p v-if="notification">Clicca sull'icona per disattivare le notifiche</p>
+                            <p v-else>Clicca sull'icona per attivare le notifiche</p>
+                            <!-- <span>Attiva notifiche desktop</span> -->
                         </div>
                     </div>
                     <!-- barra di ricerca -->
@@ -154,8 +155,8 @@
                         <i class="fa-solid fa-chevron-down" @click.stop="dropdownChevron = !dropdownChevron, messageIndex = index"></i>
 
                         <ul :class="{'dropdown-show-items' : dropdownChevron}" v-if="messageIndex === index">
-                            <li><i class="fa-solid fa-circle-info"></i> Info Messaggio</li>
-                            <li @click="deleteMessage(index)"><i class="fa-solid fa-trash-can"></i> Elimina Messaggio</li>
+                            <li><i class="fa-solid fa-circle-info" :class="{'fa-bounce' : isHoverInfo}" @mouseover="isHoverInfo = true" @mouseleave="isHoverInfo = false"></i></i></li>
+                            <li @click="deleteMessage(index)"><i class="fa-solid fa-trash-can" :class="{'fa-shake' : isHoverDelete}" @mouseover="isHoverDelete = true" @mouseleave="isHoverDelete = false"></i></li>
                         </ul>
 
                         <p>{{singleMessage.message}}</p>
