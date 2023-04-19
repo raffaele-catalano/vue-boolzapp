@@ -76,6 +76,9 @@ createApp ({
             }, 1500);
         },
 
+        deleteMessage(i){
+            this.contacts[this.counter].messages.splice(i,1)
+        },
     },
     // a differenza di methods, computed non accetta parametri perchè lavora solo al variare
     // dei *data*

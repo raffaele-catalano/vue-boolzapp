@@ -78,7 +78,7 @@
                     <ul>
                         <li v-for="(contact, index) in contacts" @click="chatSwap(index)" :class="{'active' : index === counter}">
                             
-                            <div v-if="contact.visible" class="single-conversation">
+                            <div class="single-conversation">
 
                                 <div class="user-avatar">
                                     <img :src="contact.avatar" alt="user-avatar">
@@ -88,7 +88,7 @@
 
                                     <p>{{contact.name}}</p>
     
-                                    <div class="last-message">
+                                    <div class="last-message" v-if="contact.messages.length > 0">
     
                                         <span>{{contact.messages[contact.messages.length - 1].message}}</span>
 
@@ -98,6 +98,12 @@
                                             <span class="side-last-message-time">{{contact.messages[contact.messages.length -1].time}}</span>
                                         </div>
                                         
+                                    </div>
+
+                                    <div class="last-message" v-else="">
+    
+                                        <span>Non sono presenti messaggi in questa conversazione</span>
+
                                     </div>
     
                                 </div>
@@ -122,9 +128,12 @@
                         <img :src="contacts[counter].avatar" alt="avatar">
                         <div class="user-info-text">
                             <p>{{contacts[counter].name}}</p>
-                            <span>
+                            <span v-if="contacts[counter].messages.length > 0">
                                 Ultimo accesso il {{contacts[counter].messages[contacts[counter].messages.length -1].date}} 
                                 alle {{contacts[counter].messages[contacts[counter].messages.length -1].time}}
+                            </span>
+                            <span v-else="">
+                                Impossibile determinare l'ultimo accesso
                             </span>
                         </div>
                     </div>
@@ -146,7 +155,7 @@
 
                         <ul :class="{'dropdown-show-items' : dropdownChevron}" v-if="messageIndex === index">
                             <li><i class="fa-solid fa-circle-info"></i> Info Messaggio</li>
-                            <li><i class="fa-solid fa-trash-can"></i> Elimina Messaggio</li>
+                            <li @click="deleteMessage(index)"><i class="fa-solid fa-trash-can"></i> Elimina Messaggio</li>
                         </ul>
 
                         <p>{{singleMessage.message}}</p>
