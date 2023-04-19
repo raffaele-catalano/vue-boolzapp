@@ -68,7 +68,7 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
                         <div class="search-input">
-                            <input type="text" placeholder="Cerca o Inizia una nuova conversazione">
+                            <input v-model="userFilter" @keyup="chatSearch" type="text" placeholder="Cerca o Inizia una nuova conversazione">
                         </div>
                     </div>
                 </div>
@@ -76,31 +76,37 @@
                 <div class="conversations-list">
                     <ul>
                         <li v-for="(contact, index) in contacts" @click="chatSwap(index)">
-                            <div class="user-avatar">
-                                <img :src="contact.avatar" alt="user-avatar">
-                            </div>
-                            <div class="user-conversation">
+                            
+                            <div v-if="contact.visible" class="single-conversation">
 
-                                <p>{{contact.name}}</p>
+                                <div class="user-avatar">
+                                    <img :src="contact.avatar" alt="user-avatar">
+                                </div>
 
-                                <div class="last-message">
+                                <div class="user-conversation">
 
-                                    <span>{{contact.messages[contact.messages.length - 1].message}}</span>
-                                    <div class="side-last-message">
+                                    <p>{{contact.name}}</p>
+    
+                                    <div class="last-message">
+    
+                                        <span>{{contact.messages[contact.messages.length - 1].message}}</span>
 
-                                        <span class="side-last-message-date">{{contact.messages[contact.messages.length -1].date}}</span>
-
-                                        <span class="side-last-message-time">{{contact.messages[contact.messages.length -1].time}}</span>
+                                        <div class="side-last-message">
+                                            <span class="side-last-message-date">{{contact.messages[contact.messages.length -1].date}}</span>
+    
+                                            <span class="side-last-message-time">{{contact.messages[contact.messages.length -1].time}}</span>
+                                        </div>
                                         
                                     </div>
-                                    
+    
                                 </div>
 
                             </div>
+                            
                         </li>
                     </ul>
-
                 </div>
+
             </div>
             <!-- FINE LEFT SIDE -->
 

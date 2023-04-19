@@ -15,6 +15,7 @@ createApp ({
             contacts,
             counter: 0,
             newMessage: '',
+            userFilter: '',
         }
     },
 
@@ -61,8 +62,24 @@ createApp ({
                 // la risposta automatica avviene dopo 3 secondi
             }, 1500);
         },
-    },
 
-    mounted () {
+        
+        
+    },
+    // a differenza di methods, computed non accetta parametri perchè lavora solo al variare
+    // dei *data*
+    computed: {
+        // questa funzione, sfruttando il parametro visible (true di default) fa si che se 
+        // contact.name .includes caratteri digitati nella variabile userFilter (vuota di default)
+        // allora visible è true, altrimenti è false e quindi la chat non viene mostrata
+
+        chatSearch() {
+            this.contacts.forEach(contact => {
+                contact.visible = contact.name.toLowerCase().includes(this.userFilter.toLowerCase())
+            });
+
+            return this.contacts.visible
+        }
     }
+
 }).mount('#app');

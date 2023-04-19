@@ -118,15 +118,18 @@
 
 .conversations-list li {
     list-style: none;
-    display: flex;
-    padding: 10px 0 5px 10px;
-    border-bottom: 1px solid rgb(240, 240, 240);
-    position: relative;
 }
 
 .conversations-list li:hover {
     background-color: rgb(222, 222, 222);
-    transition: all .3s;
+    transition: all 0.4s;
+}
+
+.single-conversation {
+    display: flex;
+    padding: 10px 0 5px 10px;
+    border-bottom: 1px solid rgb(240, 240, 240);
+    position: relative;
 }
 
 .user-avatar {
