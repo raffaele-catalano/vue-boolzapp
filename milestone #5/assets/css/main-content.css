@@ -65,7 +65,7 @@
     opacity: 0;
 }
 
-.dropdown-show-items {
+.message ul.dropdown-show-items {
     opacity: 1;
 }
 

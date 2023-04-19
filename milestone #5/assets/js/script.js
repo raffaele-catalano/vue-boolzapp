@@ -18,6 +18,8 @@ createApp ({
             newMessage      : '',
             userFilter      : '',
             notification    : true,
+            dropdownChevron : false,
+            messageIndex    : 0,
         }
     },
 

@@ -33,7 +33,7 @@
 
     <div id="app">
 
-        <div class="wrapper">
+        <div class="wrapper" @click="dropdownChevron = false">
             <!-- LEFT SIDE -->
             <!-- sezione laterale con elenco conversazioni -->
             <div class="side-content">
@@ -142,9 +142,9 @@
                     
                     <div v-for="(singleMessage, index) in contacts[counter].messages" class="message" :class="singleMessage.status">
                         
-                        <i class="fa-solid fa-chevron-down"></i>
+                        <i class="fa-solid fa-chevron-down" @click.stop="dropdownChevron = !dropdownChevron, messageIndex = index"></i>
 
-                        <ul>
+                        <ul :class="{'dropdown-show-items' : dropdownChevron}" v-if="messageIndex === index">
                             <li><i class="fa-solid fa-circle-info"></i> Info Messaggio</li>
                             <li><i class="fa-solid fa-trash-can"></i> Elimina Messaggio</li>
                         </ul>
