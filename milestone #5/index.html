@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,7 +56,7 @@
                     <!-- notifiche -->
                     <div class="set-notification">
                         <div class="notification-icon">
-                            <i class="fa-solid fa-bell-slash"></i>
+                            <i class="fa-solid" :class="{'fa-bell' : notification}, {'fa-bell-slash' : !notification}" @click="notification = !notification"></i>
                         </div>
                         <div class="notification-text">
                             <p>Ricevi notifiche di nuovi messaggi</p>
@@ -75,7 +76,7 @@
                 <!-- sezione con la lista delle conversazioni -->
                 <div class="conversations-list">
                     <ul>
-                        <li v-for="(contact, index) in contacts" @click="chatSwap(index)">
+                        <li v-for="(contact, index) in contacts" @click="chatSwap(index)" :class="{'active' : index === counter}">
                             
                             <div v-if="contact.visible" class="single-conversation">
 
@@ -138,9 +139,19 @@
 
                 <!-- sezione con la conversazione attiva -->
                 <div class="conversation-showed">
+                    
                     <div v-for="(singleMessage, index) in contacts[counter].messages" class="message" :class="singleMessage.status">
+                        
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                        <ul>
+                            <li><i class="fa-solid fa-circle-info"></i> Info Messaggio</li>
+                            <li><i class="fa-solid fa-trash-can"></i> Elimina Messaggio</li>
+                        </ul>
+
                         <p>{{singleMessage.message}}</p>
                         <span>{{singleMessage.time}} <i class="fa-solid fa-check-double"></i></span>
+
                     </div>
                 </div>
                 <!-- barra inferiore con l'input di inserimento nuovo messaggio -->
@@ -165,8 +176,8 @@
 
     </div>
 
-    <script type="module" src="assets/js/script.js"></script>
-    
+
+    <script type="module" src="assets/js/script.js"></script>    
 </body>
 
 </html>

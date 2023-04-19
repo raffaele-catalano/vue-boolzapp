@@ -1,11 +1,12 @@
 import contacts from './db.js'
 
 // suoni di invio/ricezione messaggi
-const soundMsgSent = new Audio('assets/sound/message_sent.mp3');
-const soundMsgReceived = new Audio('assets/sound/message_received.mp3');
+const soundMsgSent      = new Audio('assets/sound/message_sent.mp3');
+const soundMsgReceived  = new Audio('assets/sound/message_received.mp3');
 
 //inizializzazione di Luxon
 const dt = luxon.DateTime;
+
 
 const {createApp} = Vue;
 
@@ -13,9 +14,10 @@ createApp ({
     data() {
         return {
             contacts,
-            counter: 0,
-            newMessage: '',
-            userFilter: '',
+            counter         : 0,
+            newMessage      : '',
+            userFilter      : '',
+            notification    : true,
         }
     },
 
@@ -40,11 +42,16 @@ createApp ({
             // message viene pushato nell'array originale
             this.contacts[this.counter].messages.push(message);
             // riproduce suono di invio messaggio
-            soundMsgSent.play();
+            this.notification ? soundMsgSent.play() : null;
             // viene richiamata la funzione sottostante affinchè agisca dopo il push
             this.autoReply();
             // si resetta newMessage in modo che il campo di input venga svuotato
             this.newMessage = '';
+
+            setTimeout(() => {
+                const chatShowed = document.querySelector('.conversation-showed');
+                chatShowed.scrollTop = chatShowed.scrollHeight;
+            }, 2);
         },
         // questa funzione è relativa alla risposta automatica dopo l'invio di un messaggio
         // 
@@ -58,13 +65,15 @@ createApp ({
                 }
                 this.contacts[this.counter].messages.push(message);
             // riproduce suono di ricezione messaggio
-                soundMsgReceived.play();
-                // la risposta automatica avviene dopo 3 secondi
+                this.notification ? soundMsgReceived.play() : null;
+                setTimeout(() => {
+                    const chatShowed = document.querySelector('.conversation-showed');
+                    chatShowed.scrollTop = chatShowed.scrollHeight;
+                }, 1);
+                // la risposta automatica avviene dopo 1.5 secondi
             }, 1500);
         },
 
-        
-        
     },
     // a differenza di methods, computed non accetta parametri perchè lavora solo al variare
     // dei *data*
@@ -72,7 +81,6 @@ createApp ({
         // questa funzione, sfruttando il parametro visible (true di default) fa si che se 
         // contact.name .includes caratteri digitati nella variabile userFilter (vuota di default)
         // allora visible è true, altrimenti è false e quindi la chat non viene mostrata
-
         chatSearch() {
             this.contacts.forEach(contact => {
                 contact.visible = contact.name.toLowerCase().includes(this.userFilter.toLowerCase())
