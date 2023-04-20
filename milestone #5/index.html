@@ -32,6 +32,7 @@
     
 
     <div id="app">
+                                                                    <!-- TODO: IMPLEMENTA ALTRI COMMENTI -->
 
         <div class="wrapper" @click="dropdownChevron = false">
             <!-- LEFT SIDE -->
@@ -56,7 +57,7 @@
                     <!-- notifiche -->
                     <div class="set-notification">
                         <div class="notification-icon">
-                            <i class="fa-solid" :class="{'fa-bell' : notification}, {'fa-bell-slash' : !notification}" @click="notification = !notification"></i>
+                            <i class="fa-solid fa-fade" :class="{'fa-bell' : notification}, {'fa-bell mute-notification' : !notification}" @click="notification = !notification"></i>
                         </div>
                         <div class="notification-text">
                             <p v-if="notification">Clicca sull'icona per disattivare le notifiche</p>
