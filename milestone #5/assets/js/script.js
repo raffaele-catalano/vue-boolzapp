@@ -47,12 +47,14 @@ createApp ({
         // message viene rimpiazzato dal testo inserito nel campo di input
         // lo status è assegnato di default come 'sent'
         sendNewMessage(){
-            const message = {
-                date: dt.now().setLocale('it').toFormat('dd/MM/yyyy'),
-                time: dt.now().setLocale('it').toLocaleString(dt.TIME_SIMPLE),
-                message: this.newMessage,
-                status: 'sent'
-            }
+            if (this.newMessage.length > 0) {
+                
+                const message = {
+                    date: dt.now().setLocale('it').toFormat('dd/MM/yyyy'),
+                    time: dt.now().setLocale('it').toLocaleString(dt.TIME_SIMPLE),
+                    message: this.newMessage,
+                    status: 'sent'
+                }
             // message viene pushato nell'array originale
             this.contacts[this.counter].messages.push(message);
             // riproduce suono di invio messaggio
@@ -63,6 +65,8 @@ createApp ({
             this.newMessage = '';
             // viene richiamata la funzione di scroll della conversazione
             this.autoScrollChat();
+
+            }
         },
         // questa funzione è relativa alla risposta automatica dopo l'invio di un messaggio
         autoReply() {

@@ -130,7 +130,7 @@
                         <img :src="contacts[counter].avatar" alt="avatar">
                         <div class="user-info-text">
                             <p>{{contacts[counter].name}}</p>
-                            <span v-if="contacts[counter].messages.length > 0">
+                            <span v-if="contacts[counter].messages.length > 0" :item="contacts[counter].messages.length">
                                 Ultimo accesso il {{contacts[counter].messages[contacts[counter].messages.length -1].date}} 
                                 alle {{contacts[counter].messages[contacts[counter].messages.length -1].time}}
                             </span>
@@ -156,7 +156,7 @@
                         <i class="fa-solid fa-chevron-down" @click.stop="dropdownChevron = !dropdownChevron, messageIndex = index"></i>
 
                         <ul :class="{'dropdown-show-items' : dropdownChevron}" v-if="messageIndex === index">
-                            <li><i class="fa-solid fa-circle-info" :class="{'fa-bounce' : isHoverInfo}" @mouseover="isHoverInfo = true" @mouseleave="isHoverInfo = false"></i></i></li>
+                            <li><i class="fa-solid fa-circle-info" :class="{'fa-flip' : isHoverInfo}" @mouseover="isHoverInfo = true" @mouseleave="isHoverInfo = false"></i></i></li>
                             <li @click="deleteMessage(index)"><i class="fa-solid fa-trash-can" :class="{'fa-shake' : isHoverDelete}" @mouseover="isHoverDelete = true" @mouseleave="isHoverDelete = false"></i></li>
                         </ul>
 
