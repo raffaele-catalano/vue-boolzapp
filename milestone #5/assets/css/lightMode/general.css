@@ -25,7 +25,6 @@ a {
     height: 100vh;
     background: rgb(219,219,210);
     background: linear-gradient(180deg, #009688 15%, #D9DBD4 15%); 
-    cursor: pointer;
 }
 
 .wrapper {

@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     height: calc(100% - 165px);
-    background-image: url('../img/mine.jpg');
+    background-image: url('../lightMode/bg/mine.jpg');
     padding: 20px;
     overflow-y: scroll;
     scroll-behavior: smooth !important;
@@ -81,6 +81,7 @@
 .message ul li {
     padding: 5px;
     color: rgb(50, 50, 50);
+    cursor: pointer;
 }
 
 .message ul li:first-child {
@@ -88,11 +89,11 @@
 }
 
 .message ul .fa-circle-info:hover {
-    color: rgb(18, 61, 255);
+    color: rgb(53, 89, 250);
     transition: all .2s;
 }
 .message ul .fa-trash-can:hover {
-    color: rgb(212, 14, 0);
+    color: #d80000;
     transition: all .2s;
 }
 
@@ -103,6 +104,7 @@
     color: gray;
     display: none;
     font-size: 0.9rem;
+    cursor: pointer;
 }
 
 .bot-bar {
@@ -110,7 +112,7 @@
     align-items: center;
     justify-content: center;
     height: 90px;
-    background-color: #F3EEEA;
+    background-color: #EAEAEA;
     padding: 0 20px;
 }
 
@@ -121,6 +123,7 @@
 
 .bot-icons i {
     padding: 20px 25px;
+    cursor: pointer;
 }
 
 .bot-input {

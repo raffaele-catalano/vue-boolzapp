@@ -1,0 +1,148 @@
+/*-----------------------------*/
+/*--------MAIN CONTENT--------*/
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+}
+
+.main-content .top-bar .side-top-icons {
+    margin-right: 10px;
+}
+
+.conversation-showed {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 165px);
+    background-image: url('./bg/mine.jpg');
+    padding: 20px;
+    overflow-y: scroll;
+    scroll-behavior: smooth !important;
+}
+
+.message {
+    display: flex;
+    align-self: flex-start;
+    background-color: #373737;
+    padding: 20px 20px 20px 10px;
+    min-width: 9%;
+    max-width: 50%;
+    margin-bottom: 10px;
+    position: relative;
+    border-radius: 0 10px 10px 10px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .2);
+}
+
+.message:hover .fa-chevron-down {
+    display: block;
+}
+
+.message.sent {
+    align-self: flex-end;
+    background-color: #009688;
+    border-radius: 10px 0 10px 10px;
+}
+
+.message p {
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+.message span {
+    position: absolute;
+    font-size: .7rem;
+    bottom: 1px;
+    right: 6px;
+    color: rgb(235, 235, 235);
+}
+
+.message ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    background-color: #343434;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 1.1rem;
+    z-index: 1;
+    min-width: 50px;
+    box-shadow: 1px 1px 5px rgba(255, 255, 255, .1);
+    opacity: 0;
+}
+
+.message ul.dropdown-show-items {
+    opacity: 1;
+}
+
+.message ul li {
+    padding: 5px;
+    color: #d3d3d3;
+    cursor: pointer;
+}
+
+.message ul li:first-child {
+    border-bottom: 1px solid lightgray;
+}
+
+.message ul .fa-circle-info:hover {
+    color: rgb(53, 89, 250);
+    transition: all .2s;
+}
+.message ul .fa-trash-can:hover {
+    color: #d80000;
+    transition: all .2s;
+}
+
+.fa-chevron-down {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: rgb(255, 255, 255);
+    display: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.bot-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    background-color: #272727;
+    padding: 0 20px;
+}
+
+.bot-icons {
+    color: rgb(114, 114, 114);
+    font-size: 1.6rem;
+}
+
+.bot-icons i {
+    padding: 20px 25px;
+    cursor: pointer;
+}
+
+.bot-input {
+    flex-grow: 1;
+}
+
+.bot-input input {
+    padding: 20px 10px;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.fa-face-smile:hover {
+    color: #f8c84f;
+    transition: all .3s;
+}
+
+.fa-microphone:hover {
+    color: #d80000;
+    transition: all .3s;
+}

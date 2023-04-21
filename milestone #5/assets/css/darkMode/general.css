@@ -1,0 +1,36 @@
+/*GENERAL*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #dbdbd2;
+    background: linear-gradient(180deg, #009688 15%, #202020 15%); 
+    color: white;
+}
+
+.wrapper {
+    display: flex;
+    width: 80%;
+    height: 90%;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, .2);
+}
