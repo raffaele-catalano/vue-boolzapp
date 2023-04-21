@@ -1,0 +1,81 @@
+@media screen and (max-width: 768px) {
+    
+    .side-top-icons i {
+        margin: 0 5px;
+        font-size: 1.1rem;
+    }
+
+    .notification-icon i {
+        font-size: 1.3rem;
+        padding: 10px 12px;
+    }
+
+    .notification-text p {
+        font-size: .8rem;
+    }
+
+    .search-icon i {
+        padding: 6.5px 8px;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    .user-avatar img {
+        width: 50px;
+        border-radius: 50%;
+    }
+
+    .user-conversation span {
+        max-width: 120px;
+    }
+
+    .side-last-message {
+        display: none;
+    }
+
+    .conversation-showed {
+    height: calc(100% - 145px);
+    }
+
+    .message {
+        padding: 15px 15px 15px 5px;
+    }
+
+    .message p {
+        font-size: .9rem;
+    }
+
+    .message span {
+        font-size: .6rem;
+    }
+
+    .fa-chevron-down {
+        font-size: .7rem;
+    }
+
+    .message ul li {
+        font-size: .9rem;
+    }
+
+    .bot-bar {
+        height: 70px;
+        padding: 0 10px;
+    }
+
+    .bot-icons {
+        font-size: 1.3rem;
+    }
+
+    .bot-icons i {
+        padding: 20px 15px;
+        cursor: pointer;
+    }
+
+    .bot-input input {
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    
+}
