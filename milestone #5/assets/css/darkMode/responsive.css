@@ -29,6 +29,10 @@
         max-width: 120px;
     }
 
+    .user-info-text span{
+        font-size: .7rem;
+    }
+
     .side-last-message {
         display: none;
     }
@@ -78,4 +82,144 @@
 
 @media screen and (max-width: 480px) {
     
+    .top-bar {
+        height: 60px;
+    }
+
+    .user-info img {
+        width: 30px;
+    }
+
+    .user-info p {
+        font-size: 0.8rem;
+    }
+
+    .side-top-icons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .side-top-icons i {
+        font-size: 0.7rem;
+        padding: 2px;
+    }
+
+    .nav-notification {
+        height: 120px;
+    }
+
+    .notification-icon i {
+        font-size: .9rem;
+        padding: 8px 9px;
+        margin: 0 8px;
+    }
+
+    .notification-text p {
+        font-size: .6rem;
+    }
+
+    .search-bar {
+        height: 30%;
+    }
+
+    .search-icon i {
+        padding: 4.5px 6px;
+        font-size: .8rem;
+    }
+
+    .search-input input {
+        font-size: .6rem;
+    }
+
+    .conversations-list {
+        height: calc(100% - 180px);
+    }
+
+    .user-avatar {
+        margin-right: 7px;
+    }
+
+    .user-avatar img {
+        width: 30px;
+    }
+
+    .user-conversation p {
+        font-size: 0.7rem;
+    }
+
+    .user-conversation span {
+        font-size: 0.6rem;
+        max-width: 75px;
+    }
+
+    .user-info-text p{
+        font-size: .8rem;
+    }
+    
+    .user-info-text span{
+        display: none;
+    }
+
+    .checkbox-label {
+        width: 40px;
+        height: 20px;
+    }
+
+    .checkbox-label .ball {
+        width: 17px;
+        height: 17px;
+        top: 1px;
+        left: 1px;
+    }
+
+    .checkbox-label i {
+        font-size: .8rem;
+    }
+
+    .conversation-showed {
+        height: calc(100% - 120px);
+        }
+    
+    .message {
+        padding: 10px 10px 10px 5px;
+        min-width: 30%;
+        max-width: 60%;
+    }
+    
+    .message p {
+        font-size: .7rem;
+        margin-bottom: 2px;
+    }
+    
+    .message span {
+            font-size: .5rem;
+    }
+    
+    .fa-chevron-down {
+        font-size: .5rem;
+    }
+    
+    .message ul li {
+        font-size: .9rem;
+    }
+    
+    .bot-bar {
+        height: 60px;
+        padding: 0 10px;
+    }
+    
+    .bot-icons {
+        font-size: 1rem;
+    }
+    
+    .bot-icons i {
+        padding: 20px 15px;
+        cursor: pointer;
+    }
+    
+    .bot-input input {
+        height: 40px;
+        font-size: .8rem;
+    }
+
 }
