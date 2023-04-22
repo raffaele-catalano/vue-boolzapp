@@ -80,7 +80,7 @@
 
 .message ul li {
     padding: 5px;
-    color: rgb(50, 50, 50);
+    color: rgb(125, 125, 125);
     cursor: pointer;
 }
 
@@ -99,12 +99,13 @@
 
 .fa-chevron-down {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 0;
+    right: 0;
     color: gray;
     display: none;
     font-size: 0.9rem;
     cursor: pointer;
+    padding: 6px;
 }
 
 .bot-bar {

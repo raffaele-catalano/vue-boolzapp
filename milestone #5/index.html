@@ -19,10 +19,10 @@
     <!-- Vue -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.js' integrity='sha512-2zwx0mkoR2cxZY0humPK79YhJYgoX5lT+WNqkgTcV7qhVm3+msjlmOgoXnN1cW2r9qqbZez3XhnLZsyW3k8Wtg==' crossorigin='anonymous'></script>
     <!-- Css -->
-    <link rel="stylesheet" href="assets/css/darkMode/general.css">
-    <link rel="stylesheet" href="assets/css/darkMode/side-content.css">
-    <link rel="stylesheet" href="assets/css/darkMode/main-content.css">
-    <link rel="stylesheet" href="assets/css/darkMode/responsive.css">
+    <link rel="stylesheet" data-theme="themestylesheet" href="assets/css/darkMode/general.css">
+    <link rel="stylesheet" data-theme="themestylesheet" href="assets/css/darkMode/side-content.css">
+    <link rel="stylesheet" data-theme="themestylesheet" href="assets/css/darkMode/main-content.css">
+    <link rel="stylesheet" data-theme="themestylesheet" href="assets/css/darkMode/responsive.css">
     <!--  -->
     <title>Boolzapp</title>
 
@@ -139,6 +139,15 @@
                                 <em>Impossibile determinare l'ultimo accesso</em> 
                             </span>
                         </div>
+                    </div>
+                    <!-- toggle dark/light mode -->
+                    <div class="toggle-dark-light-mode">
+                        <input @click="themeSwitch" type="checkbox" class="checkbox" id="checkbox">
+                        <label for="checkbox" class="checkbox-label">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                            <span class="ball"></span>
+                        </label>
                     </div>
                     <!-- sezione icone nella top bar -->
                     <div class="side-top-icons">

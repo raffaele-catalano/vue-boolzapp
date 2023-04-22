@@ -31,6 +31,21 @@ createApp ({
             // due proprietà utilizzate per animare le icone del dropdown menu
             isHoverDelete   : false,
             isHoverInfo     : false,
+            
+            isDarkMode      : true,
+
+            percorsoDark  :  [
+                'assets/css/darkMode/general.css',
+                'assets/css/darkMode/side-content.css',
+                'assets/css/darkMode/main-content.css',
+                'assets/css/darkMode/responsive.css',
+            ],
+            percorsoLight  :  [
+                'assets/css/lightMode/general.css',
+                'assets/css/lightMode/side-content.css',
+                'assets/css/lightMode/main-content.css',
+                'assets/css/lightMode/responsive.css',
+            ],
         }
     },
 
@@ -95,10 +110,28 @@ createApp ({
                 chatShowed.scrollTop = chatShowed.scrollHeight;
             }, 1);
         },
-        //questa funzione si occupa dell'eliminazione di un determinato messaggio
+        // questa funzione si occupa dell'eliminazione di un determinato messaggio
         deleteMessage(i){
             this.contacts[this.counter].messages.splice(i,1)
         },
+        // questa funzione si occupa del cambio del tema da modalità dark a light mode e viceversa
+        themeSwitch() {
+
+            this.isDarkMode = !this.isDarkMode;
+
+            const sheetStyle = document.querySelectorAll("link[data-theme ^= 'themestylesheet']") 
+
+            sheetStyle.forEach((link, index) => {
+
+                if (this.isDarkMode) {
+                    link.href = this.percorsoDark[index]
+                } else {
+                    link.href = this.percorsoLight[index]
+                }
+            })
+
+            console.log('w mazzilli', sheetStyle.outerHTML);
+        }
     },
     // a differenza di methods, computed non accetta parametri perchè lavora solo al variare
     // dei *data*

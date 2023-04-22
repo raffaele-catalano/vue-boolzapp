@@ -98,12 +98,13 @@
 
 .fa-chevron-down {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 0;
+    right: 0;
     color: rgb(255, 255, 255);
     display: none;
     font-size: 0.9rem;
     cursor: pointer;
+    padding: 6px;
 }
 
 .bot-bar {
@@ -135,6 +136,8 @@
     width: 100%;
     border-radius: 5px;
     font-size: 1rem;
+    background-color: #373737;
+    color: #d3d3d3;
 }
 
 .fa-face-smile:hover {
